@@ -1,0 +1,14 @@
+<h1>Hola pagina pricipal</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p>
+    {{saludo}}
+</p>
+<ul>{% for val in lista %}
+    <li>{{val.nombre}} - {{val.descripcion}} </li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

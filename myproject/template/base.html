@@ -1,0 +1,20 @@
+<html>
+    <head>
+        {% load static %}
+        <time>Hola</time>
+        <link rel="Stylesheet"
+        href="{% static 'estilo.css' %}">
+    </head>
+    <body>
+        <header>
+            <a href="{% url 'home'%}">home</a>
+            <a href="{% url 'about'%}">about</a>
+        
+        </header>
+        {% block content %}
+        
+        {% endblock content %}
+
+        <img src="{% static 'descarga.jpg'  %}" alt= "mi imagen">
+    </body>
+</html>
