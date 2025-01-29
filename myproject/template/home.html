@@ -7,8 +7,14 @@
     {{saludo}}
 </p>
 <ul>{% for val in lista %}
-    <li>{{val.nombre}} - {{val.descripcion}} </li>
+    <!-- for carrera in carreras -->
+    <li>{{val.nombre}} - {{val.descripcion}} 
+        <a href="{% url 'editar_carrera' val.pk %}">editar</a>
+        <a href="{% url 'eliminar_carrera' val.pk %}">eliminar</a>
+    </li>
     {% endfor %}
 </ul>
+
+<a href="{% url 'carrera_crear' %}">crear carrera</a>
 
 {% endblock content %}

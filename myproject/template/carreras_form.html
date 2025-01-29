@@ -1,0 +1,14 @@
+<h1>Hola pagina pricipal</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>carreras</h1>
+<h2>crear carreras</h2>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">enviar</button>
+</form>
+
+{% endblock content %}

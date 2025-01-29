@@ -19,12 +19,17 @@ from django.urls import path
 from myproject import view
 from myproject.view import HomePageView
 from myproject.view import AboutPageView
-
+from myproject.view import CarreraCreateViewPage
+from myproject.view import CarreraEditarPageView
+from myproject.view import CarreraEliminarPageView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path ("",view.index,name='index'),
     path ('',HomePageView.as_view(),name='home'),
-    path ('about/',AboutPageView.as_view(),name='about')
-
+    path ('about/',AboutPageView.as_view(),name='about'),
+    path ('carrera/crear', CarreraCreateViewPage.as_view(), name='carrera_crear'),
+    path ("carreras/editar<int:pk>/", CarreraEditarPageView.as_view(), name="editar_carrera"),
+     path ("carreras/eliminar<int:pk>/", CarreraEliminarPageView.as_view(), name="eliminar_carrera")
 ]
+
